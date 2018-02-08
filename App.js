@@ -1,7 +1,10 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+/*
+ * @Author: Young
+ * DSHARP
+ * @flow 
+ * @Date: 2018-02-08 17:53:17 
+ * @Last Modified by:   Young 
+ * @Last Modified time: 2018-02-08 17:53:17 
  */
 
 import React, { Component } from 'react';
