@@ -1,5 +1,5 @@
 {
-  "name": "rnSelectmultipleButton",
+  "name": "react-native-selectmultiple-button",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -18,5 +18,28 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "description": "A button (or a group buttons) for multiple or  radio selection  by building with React Native",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danceyoung/react-native-selectmultiple-button.git"
+  },
+  "keywords": [
+    "react-native",
+    "react",
+    "ios",
+    "android",
+    "multiple",
+    "select",
+    "checkbox",
+    "radio",
+    "button"
+  ],
+  "author": "danceyoung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danceyoung/react-native-selectmultiple-button/issues"
+  },
+  "homepage": "https://github.com/danceyoung/react-native-selectmultiple-button#readme"
 }
