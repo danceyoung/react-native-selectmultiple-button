@@ -65,5 +65,6 @@ __tests__/App.js
 #ios/
 #index.ios.js
 #app.json
-# App.js
+#App.js
+#screenCapture/
 
