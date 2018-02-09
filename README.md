@@ -6,7 +6,7 @@ This library is a button (or a group buttons) for multiple or radio selection by
 You can specify any **Layout** and **Style** for container view,button view and text through **View Style Props**, **Layout Props** and **Text Style** Props supporting by React Native
 
 
-## example running in iOS and Andorid
+## example running in iOS and Andorid(captured by GIPHY CAPTURE)
 
 ![captured by GIPHY CAPTURE](https://github.com/danceyoung/react-native-selectmultiple-button/blob/master/screenCapture/ios-screencapture.gif)
 
