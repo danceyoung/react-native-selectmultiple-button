@@ -17,4 +17,4 @@ You can specify any **Layout** and **Style** for container view,button view and 
 
 ### SelectMultipleButton
 
-You need to set the props **selected** for highlighting button'status and manage the data selected by **singleTap(valueTap)** event.
+You need to set the props **selected** for highlighting button'status and manage the data selected by **singleTap(valueTap)** event through hard coding yourself.
