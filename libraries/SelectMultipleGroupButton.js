@@ -4,7 +4,7 @@
  * @flow 
  * @Date: 2018-02-07 14:08:34 
  * @Last Modified by: Young
- * @Last Modified time: 2018-02-09 14:14:11
+ * @Last Modified time: 2018-02-09 17:15:28
  */
 import React, { Component } from 'react'
 import {
@@ -111,9 +111,7 @@ export default class SelectMultipleGroupButton extends Component {
       <View
         style={
           [
-            {
-              flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'center'
-            },
+            styles.containerView,
             this.props.containerViewStyle
           ]
         }>
@@ -135,4 +133,12 @@ export default class SelectMultipleGroupButton extends Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  containerView: {
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'center'
+  }
+})
 

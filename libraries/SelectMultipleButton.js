@@ -4,7 +4,7 @@
  * @flow 
  * @Date: 2018-02-06 13:54:25 
  * @Last Modified by: Young
- * @Last Modified time: 2018-02-09 14:13:29
+ * @Last Modified time: 2018-02-09 17:15:52
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -131,7 +131,7 @@ export default class SelectMultipleButton extends Component {
   }
 }
 
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
   button: {
     margin: 5,
     borderRadius: 3,
