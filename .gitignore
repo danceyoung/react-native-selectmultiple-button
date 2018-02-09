@@ -59,3 +59,11 @@ __tests__/App.js
 .buckconfig
 .watchmanconfig
 .gitattributes
+
+# npmignore
+#android/
+#ios/
+#index.ios.js
+#app.json
+# App.js
+
