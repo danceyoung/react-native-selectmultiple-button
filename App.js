@@ -3,8 +3,8 @@
  * DSHARP
  * @flow 
  * @Date: 2018-02-08 17:53:17 
- * @Last Modified by:   Young 
- * @Last Modified time: 2018-02-08 17:53:17 
+ * @Last Modified by: Young
+ * @Last Modified time: 2018-02-09 14:12:46
  */
 
 import React, { Component } from 'react';
@@ -17,8 +17,7 @@ import {
   ScrollView
 } from 'react-native';
 import _ from 'lodash'
-import SelectMultipleButton from './libraries/SelectMultipleButton'
-import SelectMultipleGroupButton from './libraries/SelectMultipleGroupButton'
+import {SelectMultipleButton, SelectMultipleGroupButton} from './index.js'
 
 const themeColor = '#0D1014'
 const ios_blue = '#007AFF'
@@ -28,8 +27,6 @@ const radioData = ['Female', 'Male', 'Other', 'Rather not say']
 
 const multipleGroupData = [{ value: 'running' }, { value: 'riding' }, { value: 'reading' }, { value: 'coding' }, { value: 'Niuer' }]
 const radioGroupData = [{ value: 'Female', displayValue: 'F' }, { value: 'Male', displayValue: 'M' }, { value: 'Other', displayValue: 'O' }, { value: 'Rather not say', displayValue: 'R' }]
-
-
 
 export default class App extends Component {
 
@@ -59,7 +56,7 @@ export default class App extends Component {
   }
 
   _singleTapRadioSelectedButtons(valueTap, gender) {
-    Alert.alert('', valueTap)
+    // Alert.alert('', valueTap)
     this.setState({
       radioSelectedData: gender
     })
