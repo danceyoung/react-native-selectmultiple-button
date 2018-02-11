@@ -95,3 +95,12 @@ code snap
 |`group`  |array of {value,displayValue}  |yes  |just a plain array,`value` and `displayValue` props are akin to `value` and `displayValue` props of **SelectMultipleButton**.  |
 |`singleTap`  |function(valueTap)  |no  |handler to be called when the user taps the button.the button's props `value` is passed as an argument to the callback hanlder   |
 |`onSelectedValuesChange`  |function(selectedValues)  |no  |handler to be called when the user taps the button.the array of selected values is passed as an argument to the callback hanlder   |
+    highLightStyle
+Normal or highlighted style,the style object `{}` contains the following keys.
+
+ - borderColor: PropTypes.string.isRequired---Normal color of button border.default is 'gray'.
+ - backgroundColor: PropTypes.string.isRequired---Normal color of button backgroud.default is 'transparent'.
+ - textColor: PropTypes.string.isRequired---Normal color of text.default is 'gray'.
+ - borderTintColor: PropTypes.string.isRequired---Highlighted color of button border.default is '#007AFF'.
+ - backgroundTintColor: PropTypes.string.isRequired---Highlighted color of button background.default is 'transparent'.
+ - textTintColor: PropTypes.string.isRequired--Highlighted color of text.default is '#007AFF'.
