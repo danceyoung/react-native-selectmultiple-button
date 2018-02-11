@@ -87,3 +87,10 @@ code snap
 |`value`  |one of types(string,number)  |yes  |your business key   |
 |`displayValue`  |one of types(string,number)  |no  |default is == `value` prop if not set `displayValue` prop. displayed as button's text |
 |`singleTap`  |function(valueTap)  |no  |handler to be called when the user taps the button.the button's props `value` is passed as an argument to the callback hanlder   |
+
+### SelectMultipleGroupButton
+|props  |type  |required  |desc  |
+|--|--|--|--|
+|`selectMultiple`  |bool  |no  |default is true.the `selectMultiple` prop determines the grouped buttons are multiple or radio selection  |
+|`group`  |array of {value:(string,number),displayValue:(string,number)}  |yes  |just a plain array.eg:`[{value:'Female',displayValue:'F'}]`  |
+
