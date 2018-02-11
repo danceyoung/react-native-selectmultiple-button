@@ -162,7 +162,7 @@ Normal or highlighted style,akin to `highLightStyle` of **SelectMultipleButton**
 
  Sytle of grouped buttons's container view.You can specify any  [View Style Props](https://facebook.github.io/react-native/docs/view-style-props.html) and  [Layout Props](https://facebook.github.io/react-native/docs/layout-props.html).
 
-Default Layout props is
+Default View Style and Layout props is
 
     {
         flexWrap: 'wrap',
