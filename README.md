@@ -33,6 +33,7 @@ cd your project root direction
 
 code example
 [App.js](https://github.com/danceyoung/react-native-selectmultiple-button/blob/master/App.js)
+
 code snap
 
     import { SelectMultipleButton, SelectMultipleGroupButton } from 'react-native-selectmultiple-button'
