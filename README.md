@@ -118,6 +118,7 @@ Normal or highlighted style,the style object `{}` contains the following keys.
 `buttonViewStyle`
 
  Sytle of button view.You can specify any [View Style Props](https://facebook.github.io/react-native/docs/view-style-props.html).
+ 
  Default style is 
 
      {
