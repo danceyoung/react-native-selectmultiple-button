@@ -30,3 +30,15 @@ cd your project root direction
     $ npm install react-native-selectmultiple-button --save
 
 ## Usage
+
+code snap
+
+    import { SelectMultipleButton, SelectMultipleGroupButton } from 'react-native-selectmultiple-button'
+    <SelectMultipleButton
+                selectMultiple={true}
+                value={interest}
+                selected={this.state.multipleSelectedData.includes(interest)}
+                singleTap={(valueTap) => this._singleTapMultipleSelectedButtons(interest)} />
+    <SelectMultipleGroupButton
+          onSelectedValuesChange={(selectedValues) => this._groupButtonOnSelectedValuesChange(selectedValues)}
+          group={[{ value: 'Female', displayValue: 'F' }, { value: 'Male', displayValue: 'M' }, { value: 'Other', displayValue: 'O' }, { value: 'Rather not say', displayValue: 'R' }]} />
