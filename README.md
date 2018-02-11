@@ -245,3 +245,5 @@ code example
         marginBottom: 5,
       },
     });
+
+## Props
