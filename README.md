@@ -89,6 +89,7 @@ code snap
 |`singleTap`  |function(valueTap)  |no  |handler to be called when the user taps the button.the button's props `value` is passed as an argument to the callback hanlder   |
 
 `highLightStyle`
+
 Normal or highlighted style,the style object `{}` contains the following keys.
 
  - borderColor: PropTypes.string.isRequired---Normal color of button border.
@@ -97,6 +98,7 @@ Normal or highlighted style,the style object `{}` contains the following keys.
  - borderTintColor: PropTypes.string.isRequired---Highlighted color of button border.
  - backgroundTintColor: PropTypes.string.isRequired---Highlighted color of button background.
  - textTintColor: PropTypes.string.isRequired--Highlighted color of text.
+ 
  Default style is
 
      `{
