@@ -145,3 +145,15 @@ Default style is
 |`group`  |array of {value,displayValue}  |yes  |just a plain array,`value` and `displayValue` props are akin to `value` and `displayValue` props of **SelectMultipleButton**.  |
 |`singleTap`  |function(valueTap)  |no  |handler to be called when the user taps the button.the button's props `value` is passed as an argument to the callback hanlder   |
 |`onSelectedValuesChange`  |function(selectedValues)  |no  |handler to be called when the user taps the button.the array of selected values is passed as an argument to the callback hanlder   |
+
+`highLightStyle`
+
+Normal or highlighted style,akin to `highLightStyle` of **SelectMultipleButton**.
+
+`buttonViewStyle`
+
+ Sytle of button view,skin to `buttonViewStyle` of **SelectMultipleButton**
+
+`textStyle`
+
+ Sytle of text,akin to `textStyle` of **SelectMultipleButton** 
