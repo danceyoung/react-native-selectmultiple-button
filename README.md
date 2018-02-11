@@ -93,4 +93,5 @@ code snap
 |--|--|--|--|
 |`selectMultiple`  |bool  |no  |default is true.the `selectMultiple` prop determines the grouped buttons are multiple or radio selection  |
 |`group`  |array of {value,displayValue}  |yes  |just a plain array,`value` and `displayValue` props are akin to `value` and `displayValue` props of **SelectMultipleButton**.  |
-
+|`singleTap`  |function(valueTap)  |no  |handler to be called when the user taps the button.the button's props `value` is passed as an argument to the callback hanlder   |
+|`onSelectedValuesChange`  |function(selectedValues)  |no  |handler to be called when the user taps the button.the array of selected values is passed as an argument to the callback hanlder   |
