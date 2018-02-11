@@ -125,6 +125,19 @@ Normal or highlighted style,the style object `{}` contains the following keys.
         borderWidth: 1
       }
       
+`textStyle`
+
+Style of text.You can specify any [Text Style Props](https://facebook.github.io/react-native/docs/text.html#style)
+
+Default style is
+
+    {
+        textAlign: 'center',
+        marginTop: 5,
+        marginBottom: 5,
+        marginLeft: 10,
+        marginRight: 10,
+      }
 ### SelectMultipleGroupButton
 |props  |type  |required  |desc  |
 |--|--|--|--|
