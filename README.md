@@ -101,14 +101,14 @@ Normal or highlighted style,the style object `{}` contains the following keys.
  
  Default style is
 
-     `{
+     {
           borderColor: 'gray',
           backgroundColor: 'transparent',
           textColor: 'gray',
           borderTintColor: ios_blue,
           backgroundTintColor: 'transparent',
           textTintColor: ios_blue,
-        }`
+        }
 
     
 
