@@ -4,10 +4,10 @@
  * @flow 
  * @Date: 2018-02-08 17:53:17 
  * @Last Modified by: Young
- * @Last Modified time: 2018-02-09 14:12:46
+ * @Last Modified time: 2018-02-11 16:13:34
  */
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   Platform,
   StyleSheet,
@@ -17,7 +17,7 @@ import {
   ScrollView
 } from 'react-native';
 import _ from 'lodash'
-import {SelectMultipleButton, SelectMultipleGroupButton} from './index.js'
+import { SelectMultipleButton, SelectMultipleGroupButton } from './index.js'
 
 const themeColor = '#0D1014'
 const ios_blue = '#007AFF'
@@ -124,7 +124,7 @@ export default class App extends Component {
           implement the radio-select buttons demo by SelectMultipleButton
         </Text>
         <Text style={{ color: ios_blue, marginLeft: 10 }}>
-          I'm {this.state.radioSelectedData}
+          I am {this.state.radioSelectedData}
         </Text>
         <View
           style={{ flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'center' }}>
@@ -172,7 +172,7 @@ export default class App extends Component {
           implement the radio-select buttons demo by SelectMultipleGroupButton
         </Text>
         <Text style={{ color: 'green', marginLeft: 10 }}>
-          I'm {this.state.radioSelectedData_group}
+          I am {this.state.radioSelectedData_group}
         </Text>
         <SelectMultipleGroupButton
           selectMultiple={false}
