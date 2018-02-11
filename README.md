@@ -92,5 +92,5 @@ code snap
 |props  |type  |required  |desc  |
 |--|--|--|--|
 |`selectMultiple`  |bool  |no  |default is true.the `selectMultiple` prop determines the grouped buttons are multiple or radio selection  |
-|`group`  |array of {value:(string,number),displayValue:(string,number)}  |yes  |just a plain array.eg:`[{value:'Female',displayValue:'F'}]`  |
+|`group`  |array of {value:(string,number),displayValue:(string,number)}  |yes  |just a plain array.eg:`[{value:'Female',displayValue:'F'},{value:'Male',displayValue:'M'}]`  |
 
