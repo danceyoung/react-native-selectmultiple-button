@@ -1,6 +1,6 @@
 {
   "name": "react-native-selectmultiple-button",
-  "version": "0.0.1",
+  "version": "0.0.60",
   "private": false,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -34,7 +34,9 @@
     "select",
     "checkbox",
     "radio",
-    "button"
+    "button",
+    "tag",
+    "multi select"
   ],
   "author": "danceyoung",
   "license": "MIT",
