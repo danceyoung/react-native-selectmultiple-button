@@ -86,4 +86,4 @@ code snap
 |`selected`  |bool  |no  |default is false.the `selected` prop determines whether the button is highlighted  |
 |`value`  |one of types(string,number)  |yes  |your business key   |
 |`displayValue`  |one of types(string,number)  |no  |default is == `value` prop if not set `displayValue` prop. displayed as button's text |
-|`highLightStyle`  | {borderColor: PropTypes.string.isRequired,backgroundColor: PropTypes.string.isRequired,textColor: PropTypes.string.isRequired,borderTintColor: PropTypes.string.isRequired,backgroundTintColor: PropTypes.string.isRequired,textTintColor: PropTypes.string.isRequired}|no  | |
+|`highLightStyle`  | {borderColor: string.isRequired,backgroundColor: string.isRequired,textColor: string.isRequired,borderTintColor: string.isRequired,backgroundTintColor: string.isRequired,textTintColor: string.isRequired}|no  | |
