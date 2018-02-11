@@ -83,6 +83,6 @@ code snap
 |props  |type  |required  |desc  |
 |--|--|--|--|
 |`selectMultiple`  |bool  |no  |default is true.the `selectMultiple` prop determines multiple or radio selection  |
-|`selected`  |bool  |no  |default is false.the `selected` prop determines whether the button is highlighted  |
+|`selected`  |bool  |no  |default is false.the `selected` prop determines whether the button is selected and highlighted  |
 |`value`  |one of types(string,number)  |yes  |your business key   |
 |`displayValue`  |one of types(string,number)  |no  |default is == `value` prop if not set `displayValue` prop. displayed as button's text |
