@@ -79,14 +79,15 @@ code snap
 ## Props
 
 ### SelectMultipleButton
-
 |props  |type  |required  |desc  |
 |--|--|--|--|
-|`selectMultiple`  |bool  |no  |default is true.the `selectMultiple` prop determines multiple or radio selection  |
+|`selectMultiple`  |bool  |no  |default is true.the `selectMultiple` prop determines whether the button is multiple or radio selection  |
 |`selected`  |bool  |no  |default is false.the `selected` prop determines whether the button is selected and highlighted  |
 |`value`  |one of types(string,number)  |yes  |your business key   |
 |`displayValue`  |one of types(string,number)  |no  |default is == `value` prop if not set `displayValue` prop. displayed as button's text |
 |`singleTap`  |function(valueTap)  |no  |handler to be called when the user taps the button.the button's props `value` is passed as an argument to the callback hanlder   |
+
+----------
 
 `highLightStyle`
 
@@ -110,7 +111,9 @@ Normal or highlighted style,the style object `{}` contains the following keys.
           textTintColor: ios_blue,
         }
 
-    
+
+----------
+
 
 `buttonViewStyle`
 
@@ -124,7 +127,11 @@ Normal or highlighted style,the style object `{}` contains the following keys.
         justifyContent: 'center',
         borderWidth: 1
       }
-      
+
+
+----------
+
+
 `textStyle`
 
 Style of text.You can specify any [Text Style Props](https://facebook.github.io/react-native/docs/text.html#style)
@@ -138,6 +145,7 @@ Default style is
         marginLeft: 10,
         marginRight: 10,
       }
+
 ### SelectMultipleGroupButton
 |props  |type  |required  |desc  |
 |--|--|--|--|
@@ -146,19 +154,35 @@ Default style is
 |`singleTap`  |function(valueTap)  |no  |handler to be called when the user taps the button.the button's props `value` is passed as an argument to the callback hanlder   |
 |`onSelectedValuesChange`  |function(selectedValues)  |no  |handler to be called when the user taps the button.the array of selected values is passed as an argument to the callback hanlder   |
 
+
+----------
+
+
 `highLightStyle`
 
 Normal or highlighted style,akin to `highLightStyle` of **SelectMultipleButton**.
+
+
+----------
+
 
 `buttonViewStyle`
 
  Sytle of button view,skin to `buttonViewStyle` of **SelectMultipleButton**
 
+
+----------
+
+
 `textStyle`
 
  Sytle of text,akin to `textStyle` of **SelectMultipleButton** 
- 
- `containerViewStyle`
+
+
+----------
+
+
+`containerViewStyle`
 
  Sytle of grouped buttons's container view.You can specify any  [View Style Props](https://facebook.github.io/react-native/docs/view-style-props.html) and  [Layout Props](https://facebook.github.io/react-native/docs/layout-props.html).
 
