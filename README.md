@@ -247,6 +247,9 @@ code example
     });
 
 ## Props
+
+### SelectMultipleButton
+
 |props  |type  |required  |desc  |
 |--|--|--|--|
 |selectMultiple  |bool  |no  |default is true.the `selectMultiple` prop determines multiple or radio selection  |
