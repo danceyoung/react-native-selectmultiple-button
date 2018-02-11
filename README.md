@@ -86,4 +86,4 @@ code snap
 |`selected`  |bool  |no  |default is false.the `selected` prop determines whether the button is highlighted  |
 |`value`  |one of types(string,number)  |yes  |your business key   |
 |`displayValue`  |one of types(string,number)  |no  |default is == `value` prop if not set `displayValue` prop. displayed as button's text |
-|`singleTap`  |function(valueTap)  |no  |handler to be called when the user taps the button.the button's value is passed as argument to the callback hanlder   |
+|`singleTap`  |function(valueTap)  |no  |handler to be called when the user taps the button.the button's props `value` is passed as argument to the callback hanlder   |
