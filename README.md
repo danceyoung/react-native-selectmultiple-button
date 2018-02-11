@@ -88,20 +88,32 @@ code snap
 |`displayValue`  |one of types(string,number)  |no  |default is == `value` prop if not set `displayValue` prop. displayed as button's text |
 |`singleTap`  |function(valueTap)  |no  |handler to be called when the user taps the button.the button's props `value` is passed as an argument to the callback hanlder   |
 
-    highLightStyle
+`highLightStyle`
 Normal or highlighted style,the style object `{}` contains the following keys.
 
- - borderColor: PropTypes.string.isRequired---Normal color of button border.default is 'gray'.
- - backgroundColor: PropTypes.string.isRequired---Normal color of button backgroud.default is 'transparent'.
- - textColor: PropTypes.string.isRequired---Normal color of text.default is 'gray'.
- - borderTintColor: PropTypes.string.isRequired---Highlighted color of button border.default is '#007AFF'.
- - backgroundTintColor: PropTypes.string.isRequired---Highlighted color of button background.default is 'transparent'.
- - textTintColor: PropTypes.string.isRequired--Highlighted color of text.default is '#007AFF'.
- 
-  
+ - borderColor: PropTypes.string.isRequired---Normal color of button border.
+ - backgroundColor: PropTypes.string.isRequired---Normal color of button backgroud.
+ - textColor: PropTypes.string.isRequired---Normal color of text.
+ - borderTintColor: PropTypes.string.isRequired---Highlighted color of button border.
+ - backgroundTintColor: PropTypes.string.isRequired---Highlighted color of button background.
+ - textTintColor: PropTypes.string.isRequired--Highlighted color of text.
+ Default style is
 
-     buttonViewStyle
- Sytle of button view.You can specify any [View Style Props](https://facebook.github.io/react-native/docs/view-style-props.html).Default style is 
+     `{
+          borderColor: 'gray',
+          backgroundColor: 'transparent',
+          textColor: 'gray',
+          borderTintColor: ios_blue,
+          backgroundTintColor: 'transparent',
+          textTintColor: ios_blue,
+        }`
+
+    
+
+`buttonViewStyle`
+
+ Sytle of button view.You can specify any [View Style Props](https://facebook.github.io/react-native/docs/view-style-props.html).
+ Default style is 
 
      {
         margin: 5,
