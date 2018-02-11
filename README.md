@@ -84,4 +84,6 @@ code snap
 |--|--|--|--|
 |`selectMultiple`  |bool  |no  |default is true.the `selectMultiple` prop determines multiple or radio selection  |
 |`selected`  |bool  |no  |default is false.the `selected` prop determines whether the button is highlighted  |
-|`value`  |one of types(string,number)  |yes  |button's id,or your object id/code   |
+|`value`  |one of types(string,number)  |yes  |your business key   |
+|`displayValue`  |one of types(string,number)  |no  |default is == `value` prop if not set `displayValue` prop. displayed as button's text |
+|`highLightStyle`  | {borderColor: PropTypes.string.isRequired,backgroundColor: PropTypes.string.isRequired,textColor: PropTypes.string.isRequired,borderTintColor: PropTypes.string.isRequired,backgroundTintColor: PropTypes.string.isRequired,textTintColor: PropTypes.string.isRequired}|no  | |
