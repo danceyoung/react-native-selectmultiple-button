@@ -252,4 +252,6 @@ code example
 
 |props  |type  |required  |desc  |
 |--|--|--|--|
-|selectMultiple  |bool  |no  |default is true.the `selectMultiple` prop determines multiple or radio selection  |
+|`selectMultiple`  |bool  |no  |default is true.the `selectMultiple` prop determines multiple or radio selection  |
+|`selected`  |bool  |no  |default is false.the `selected` prop determines whether the button is highlighted  |
+|`value`  |one of types(string,number)  |yes  |button's id,or your object id/code   |
