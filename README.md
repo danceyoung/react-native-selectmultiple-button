@@ -88,13 +88,6 @@ code snap
 |`displayValue`  |one of types(string,number)  |no  |default is == `value` prop if not set `displayValue` prop. displayed as button's text |
 |`singleTap`  |function(valueTap)  |no  |handler to be called when the user taps the button.the button's props `value` is passed as an argument to the callback hanlder   |
 
-### SelectMultipleGroupButton
-|props  |type  |required  |desc  |
-|--|--|--|--|
-|`selectMultiple`  |bool  |no  |default is true.the `selectMultiple` prop determines the grouped buttons are multiple or radio selection  |
-|`group`  |array of {value,displayValue}  |yes  |just a plain array,`value` and `displayValue` props are akin to `value` and `displayValue` props of **SelectMultipleButton**.  |
-|`singleTap`  |function(valueTap)  |no  |handler to be called when the user taps the button.the button's props `value` is passed as an argument to the callback hanlder   |
-|`onSelectedValuesChange`  |function(selectedValues)  |no  |handler to be called when the user taps the button.the array of selected values is passed as an argument to the callback hanlder   |
     highLightStyle
 Normal or highlighted style,the style object `{}` contains the following keys.
 
@@ -104,3 +97,11 @@ Normal or highlighted style,the style object `{}` contains the following keys.
  - borderTintColor: PropTypes.string.isRequired---Highlighted color of button border.default is '#007AFF'.
  - backgroundTintColor: PropTypes.string.isRequired---Highlighted color of button background.default is 'transparent'.
  - textTintColor: PropTypes.string.isRequired--Highlighted color of text.default is '#007AFF'.
+ 
+### SelectMultipleGroupButton
+|props  |type  |required  |desc  |
+|--|--|--|--|
+|`selectMultiple`  |bool  |no  |default is true.the `selectMultiple` prop determines the grouped buttons are multiple or radio selection  |
+|`group`  |array of {value,displayValue}  |yes  |just a plain array,`value` and `displayValue` props are akin to `value` and `displayValue` props of **SelectMultipleButton**.  |
+|`singleTap`  |function(valueTap)  |no  |handler to be called when the user taps the button.the button's props `value` is passed as an argument to the callback hanlder   |
+|`onSelectedValuesChange`  |function(selectedValues)  |no  |handler to be called when the user taps the button.the array of selected values is passed as an argument to the callback hanlder   |
