@@ -98,6 +98,19 @@ Normal or highlighted style,the style object `{}` contains the following keys.
  - backgroundTintColor: PropTypes.string.isRequired---Highlighted color of button background.default is 'transparent'.
  - textTintColor: PropTypes.string.isRequired--Highlighted color of text.default is '#007AFF'.
  
+  
+
+     buttonViewStyle
+ Sytle of button view.You can specify any [View Style Props](https://facebook.github.io/react-native/docs/view-style-props.html).Default style is 
+
+     {
+        margin: 5,
+        borderRadius: 3,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 1
+      }
+      
 ### SelectMultipleGroupButton
 |props  |type  |required  |desc  |
 |--|--|--|--|
