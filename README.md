@@ -153,7 +153,7 @@ Default style is
 |props  |type  |required  |desc  |
 |--|--|--|--|
 |`multiple`  |bool  |no  |Default is true. The `multiple` prop determines the grouped buttons are multiple or radio selected  |
-|`defaultSelectedIndexes`  |array  |no  |The indexes array of `group` of the grouped buttons to be default selected and highlighted |
+|`defaultSelectedIndexes`  |array  |no  |The indexes array in `group` of the grouped buttons to be default selected and highlighted |
 |`group`  |array of {value,displayValue}  |yes  |Just a plain array, `value` and `displayValue` props are akin to `value` and `displayValue` props of `SelectMultipleButton`.  |
 |`singleTap`  |function(valueTap)  |no  |Handler to be called when the user taps the button. The button's props `value` is passed as an argument to the callback hanlder.   |
 |`onSelectedValuesChange`  |function(selectedValues)  |no  |Handler to be called when the user taps the button.the array of selected values is passed as an argument to the callback hanlder.   |
