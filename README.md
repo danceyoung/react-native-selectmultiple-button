@@ -195,3 +195,6 @@ Default View Style and Layout props is
         flexDirection: 'row',
         justifyContent: 'center'
       }
+## License
+
+react-native-selectmultiple-button is [MIT LICENSE](https://github.com/danceyoung/react-native-selectmultiple-button/blob/master/LICENSE).
