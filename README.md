@@ -1,10 +1,10 @@
 
 # React Native SelectMultiple Button
 
-This library is a button (or a group buttons) supporting multiple or radio selection by building with React Native
+This library is a button (or a grouped buttons) supporting multiple or radio selection by building with React Native
 
 
-You can specify any **Layout** and **Style** for container view,button view and text through **View Style Props**, **Layout Props** and **Text Style Props** supporting by React Native
+You can specify any **Layout** and **Style** for container view,button view and text through `View Style Props`, `Layout Props` and `Text Style Props` supporting by React Native
 
 
 ## Example running in iOS and Andorid(captured by GIPHY CAPTURE)
@@ -18,10 +18,10 @@ You can specify any **Layout** and **Style** for container view,button view and 
 
 ### SelectMultipleButton
 
-You need to set the props **selected** for highlighting button'status and manage the data selected by **singleTap(valueTap)** event through hard coding yourself.
+You need to set the props `selected` as `true` to highlight button's selected status and manage the data selected through event props `singleTap(valueTap)` by hard coding yourself.
 
 ### SelectMultipleGroupButton
-You needn't to set these settings like using SelectMultipleButton,because these features are build in the SelectMultipleGroupButton.what you do is set the event **singleTap(valueTap)** for holding the value tap and the event **onSelectedValuesChange(selectedValues)** for holding the values selected array. 
+You needn't to set these settings like SelectMultipleButton, because these features are build in the SelectMultipleGroupButton. What you do is set the event props `singleTap(valueTap)` to hold the value tap and the event props `onSelectedValuesChange(selectedValues)` to hold the array of values selected. 
 
 ## Installation
 
@@ -32,6 +32,7 @@ cd your project root direction
 ## Usage
 
 code example
+
 [App.js](https://github.com/danceyoung/react-native-selectmultiple-button/blob/master/App.js)
 
 code snap
@@ -81,17 +82,17 @@ code snap
 ### SelectMultipleButton
 |props  |type  |required  |desc  |
 |--|--|--|--|
-|`selectMultiple`  |bool  |no  |default is true.the `selectMultiple` prop determines whether the button is multiple or radio selection  |
-|`selected`  |bool  |no  |default is false.the `selected` prop determines whether the button is selected and highlighted  |
-|`value`  |one of types(string,number)  |yes  |your business key   |
-|`displayValue`  |one of types(string,number)  |no  |default is == `value` prop if not set `displayValue` prop. displayed as button's text |
-|`singleTap`  |function(valueTap)  |no  |handler to be called when the user taps the button.the button's props `value` is passed as an argument to the callback hanlder   |
+|`selectMultiple`  |bool  |no  |Default is true. The `selectMultiple` prop determines whether the button is multiple or radio selected  |
+|`selected`  |bool  |no  |Default is false. The `selected` prop determines whether the button is selected and highlighted  |
+|`value`  |one of types(string,number)  |yes  |Your business key   |
+|`displayValue`  |one of types(string,number)  |no  |Default is == `value` prop if not set `displayValue` prop. Displayed as button's text |
+|`singleTap`  |function(valueTap)  |no  |Handler to be called when the user taps the button. The button's props `value` is passed as an argument to the callback hanlder   |
 
 ----------
 
 `highLightStyle`
 
-Normal or highlighted style,the style object `{}` contains the following keys.
+Normal or highlighted style, the style object `{}` contains the following keys.
 
  - borderColor: PropTypes.string.isRequired---Normal color of button border.
  - backgroundColor: PropTypes.string.isRequired---Normal color of button backgroud.
@@ -117,7 +118,7 @@ Normal or highlighted style,the style object `{}` contains the following keys.
 
 `buttonViewStyle`
 
- Sytle of button view.You can specify any [View Style Props](https://facebook.github.io/react-native/docs/view-style-props.html).
+ Sytle of button view. You can specify any [View Style Props](https://facebook.github.io/react-native/docs/view-style-props.html).
  
  Default style is 
 
@@ -135,7 +136,7 @@ Normal or highlighted style,the style object `{}` contains the following keys.
 
 `textStyle`
 
-Style of text.You can specify any [Text Style Props](https://facebook.github.io/react-native/docs/text.html#style)
+Style of text. You can specify any [Text Style Props](https://facebook.github.io/react-native/docs/text.html#style)
 
 Default style is
 
@@ -150,10 +151,10 @@ Default style is
 ### SelectMultipleGroupButton
 |props  |type  |required  |desc  |
 |--|--|--|--|
-|`selectMultiple`  |bool  |no  |default is true.the `selectMultiple` prop determines the grouped buttons are multiple or radio selection  |
-|`group`  |array of {value,displayValue}  |yes  |just a plain array,`value` and `displayValue` props are akin to `value` and `displayValue` props of **SelectMultipleButton**.  |
-|`singleTap`  |function(valueTap)  |no  |handler to be called when the user taps the button.the button's props `value` is passed as an argument to the callback hanlder   |
-|`onSelectedValuesChange`  |function(selectedValues)  |no  |handler to be called when the user taps the button.the array of selected values is passed as an argument to the callback hanlder   |
+|`selectMultiple`  |bool  |no  |Default is true. The `selectMultiple` prop determines the grouped buttons are multiple or radio selected  |
+|`group`  |array of {value,displayValue}  |yes  |Just a plain array, `value` and `displayValue` props are akin to `value` and `displayValue` props of `SelectMultipleButton`.  |
+|`singleTap`  |function(valueTap)  |no  |Handler to be called when the user taps the button. The button's props `value` is passed as an argument to the callback hanlder.   |
+|`onSelectedValuesChange`  |function(selectedValues)  |no  |Handler to be called when the user taps the button.the array of selected values is passed as an argument to the callback hanlder.   |
 
 
 ----------
@@ -161,7 +162,7 @@ Default style is
 
 `highLightStyle`
 
-Normal or highlighted style,akin to `highLightStyle` of **SelectMultipleButton**.
+Normal or highlighted style, akin to `highLightStyle` of `SelectMultipleButton`.
 
 
 ----------
@@ -169,7 +170,7 @@ Normal or highlighted style,akin to `highLightStyle` of **SelectMultipleButton**
 
 `buttonViewStyle`
 
- Sytle of button view,skin to `buttonViewStyle` of **SelectMultipleButton**
+ Sytle of button view, akin to `buttonViewStyle` of `SelectMultipleButton`.
 
 
 ----------
@@ -177,7 +178,7 @@ Normal or highlighted style,akin to `highLightStyle` of **SelectMultipleButton**
 
 `textStyle`
 
- Sytle of text,akin to `textStyle` of **SelectMultipleButton** 
+ Sytle of text, akin to `textStyle` of `SelectMultipleButton`. 
 
 
 ----------
@@ -185,7 +186,7 @@ Normal or highlighted style,akin to `highLightStyle` of **SelectMultipleButton**
 
 `containerViewStyle`
 
- Sytle of grouped buttons's container view.You can specify any  [View Style Props](https://facebook.github.io/react-native/docs/view-style-props.html) and  [Layout Props](https://facebook.github.io/react-native/docs/layout-props.html).
+ Sytle of the grouped buttons container view. You can specify any  [View Style Props](https://facebook.github.io/react-native/docs/view-style-props.html) and  [Layout Props](https://facebook.github.io/react-native/docs/layout-props.html).
 
 Default View Style and Layout props is
 
