@@ -4,7 +4,7 @@
  * @flow 
  * @Date: 2018-02-07 14:08:34 
  * @Last Modified by: Young
- * @Last Modified time: 2018-02-12 10:52:52
+ * @Last Modified time: 2018-02-12 15:17:25
  */
 import React, { Component } from 'react'
 import {
@@ -83,9 +83,11 @@ export default class SelectMultipleGroupButton extends Component {
         })
       } else {
         var idx = this.props.defaultSelectedIndexes[0]
-        this.setState({
-          radioSelectedData: this.props.group[idx].value
-        })
+        if (idx !== undefined) {
+          this.setState({
+            radioSelectedData: this.props.group[idx].value
+          })
+        }
       }
     }
   }
