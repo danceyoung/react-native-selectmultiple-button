@@ -10,6 +10,7 @@ You can specify any **Layout** and **Style** for container view,button view and 
 ## Example running in iOS and Andorid(captured by GIPHY CAPTURE)
 
 ![captured by GIPHY CAPTURE](https://github.com/danceyoung/react-native-selectmultiple-button/blob/master/screenCapture/ios-screencapture.gif)
+> Note:Runing a Android Virtual Device is too TMD large memory eated.
 
 ## Instruction
 
