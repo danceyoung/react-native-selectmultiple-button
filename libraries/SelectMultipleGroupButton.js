@@ -4,7 +4,7 @@
  * @flow 
  * @Date: 2018-02-07 14:08:34 
  * @Last Modified by: Young
- * @Last Modified time: 2018-02-09 17:15:28
+ * @Last Modified time: 2018-02-12 10:36:12
  */
 import React, { Component } from 'react'
 import {
@@ -22,7 +22,8 @@ const ios_blue = '#007AFF'
 export default class SelectMultipleGroupButton extends Component {
 
   static propTypes = {
-    selectMultiple: PropTypes.bool,
+    multiple: PropTypes.bool,
+    defaultSelectedIndex: PropTypes.number,
 
     group: PropTypes.arrayOf(PropTypes.shape({
       value: PropTypes.oneOfType(
@@ -56,7 +57,7 @@ export default class SelectMultipleGroupButton extends Component {
   }
 
   static defaultProps = {
-    selectMultiple: true,
+    multiple: true,
     singleTap: (valueTap) => { },
     onSelectedValuesChange: (selectedValues) => { }
   }
@@ -70,14 +71,29 @@ export default class SelectMultipleGroupButton extends Component {
     }
   }
 
+  componentDidMount() {
+    if (this.props.defaultSelectedIndex !== undefined) {
+      var defaultSelectedValue = this.props.group[this.props.defaultSelectedIndex].value
+      if (this.props.multiple) {
+        this.state.multipleSelectedData.push(defaultSelectedValue)
+        this.setState({
+          multipleSelectedData: this.state.multipleSelectedData
+        })
+      } else {
+        this.setState({
+          radioSelectedData: defaultSelectedValue
+        })
+      }
+    }
+  }
+
   _singleTapMultipleSelectedButtons(valueTap) {
-    if (this.props.selectMultiple) {
+    if (this.props.multiple) {
       if (this.state.multipleSelectedData.includes(valueTap)) {
         _.remove(this.state.multipleSelectedData, (item) => { return item === valueTap })
       } else {
         this.state.multipleSelectedData.push(valueTap)
       }
-
 
       this.props.onSelectedValuesChange(this.state.multipleSelectedData)
 
@@ -87,6 +103,7 @@ export default class SelectMultipleGroupButton extends Component {
         }
       )
     } else {
+      this.props.onSelectedValuesChange([valueTap])
       this.setState(
         {
           radioSelectedData: valueTap
@@ -99,7 +116,7 @@ export default class SelectMultipleGroupButton extends Component {
   }
 
   _selectedStatus(value) {
-    if (this.props.selectMultiple) {
+    if (this.props.multiple) {
       return this.state.multipleSelectedData.includes(value)
     } else {
       return this.state.radioSelectedData === value
@@ -122,7 +139,7 @@ export default class SelectMultipleGroupButton extends Component {
               buttonViewStyle={this.props.buttonViewStyle}
               textStyle={this.props.textStyle}
               highLightStyle={this.props.highLightStyle}
-              selectMultiple={this.props.selectMultiple}
+              multiple={this.props.multiple}
               value={ele.value}
               displayValue={ele.displayValue}
               selected={this._selectedStatus(ele.value)}
