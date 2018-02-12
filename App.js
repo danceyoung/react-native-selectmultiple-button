@@ -4,7 +4,7 @@
  * @flow 
  * @Date: 2018-02-08 17:53:17 
  * @Last Modified by: Young
- * @Last Modified time: 2018-02-12 10:40:48
+ * @Last Modified time: 2018-02-12 10:57:59
  */
 
 import React, { Component } from 'react'
@@ -28,19 +28,25 @@ const radioData = ['Female', 'Male', 'Other', 'Rather not say']
 const multipleGroupData = [{ value: 'running' }, { value: 'riding' }, { value: 'reading' }, { value: 'coding' }, { value: 'Niuer' }]
 const radioGroupData = [{ value: 'Female', displayValue: 'F' }, { value: 'Male', displayValue: 'M' }, { value: 'Other', displayValue: 'O' }, { value: 'Rather not say', displayValue: 'R' }]
 
-const defaultSelectedIndex_group_insterest = 4
-const defaultSelectedIndex_group_gender = 1
+const defaultSelectedIndex_group_insterest = [0,1,4]
+const defaultSelectedIndex_group_gender = [1]
 
 export default class App extends Component {
 
   constructor(props) {
     super(props)
+
+    var selectedValues1=[]
+    defaultSelectedIndex_group_insterest.map((item)=>{
+      selectedValues1.push(multipleGroupData[item].value)
+    })
+
     this.state = {
       multipleSelectedData: [],
       radioSelectedData: '',
 
-      multipleSelectedData_group: [multipleGroupData[defaultSelectedIndex_group_insterest].value],
-      radioSelectedData_group: radioGroupData[defaultSelectedIndex_group_gender].value,
+      multipleSelectedData_group: selectedValues1,
+      radioSelectedData_group: radioGroupData[defaultSelectedIndex_group_gender[0]].value,
     }
   }
 
@@ -156,7 +162,7 @@ export default class App extends Component {
           I like {_.join(this.state.multipleSelectedData_group, ', ')}
         </Text>
         <SelectMultipleGroupButton
-          defaultSelectedIndex={defaultSelectedIndex_group_insterest}
+          defaultSelectedIndexes={[0,2,4]}
           containerViewStyle={{
             justifyContent: 'flex-start'
           }}
@@ -180,7 +186,7 @@ export default class App extends Component {
         </Text>
         <SelectMultipleGroupButton
           multiple={false}
-          defaultSelectedIndex={defaultSelectedIndex_group_gender}
+          defaultSelectedIndexes={[1]}
           containerViewStyle={{
             flexDirection: 'column',
             width: 100
