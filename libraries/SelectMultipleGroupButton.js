@@ -4,7 +4,7 @@
  * @flow 
  * @Date: 2018-02-07 14:08:34 
  * @Last Modified by: Young
- * @Last Modified time: 2018-02-12 10:36:12
+ * @Last Modified time: 2018-02-12 10:52:52
  */
 import React, { Component } from 'react'
 import {
@@ -23,7 +23,7 @@ export default class SelectMultipleGroupButton extends Component {
 
   static propTypes = {
     multiple: PropTypes.bool,
-    defaultSelectedIndex: PropTypes.number,
+    defaultSelectedIndexes: PropTypes.arrayOf(PropTypes.number),
 
     group: PropTypes.arrayOf(PropTypes.shape({
       value: PropTypes.oneOfType(
@@ -72,16 +72,19 @@ export default class SelectMultipleGroupButton extends Component {
   }
 
   componentDidMount() {
-    if (this.props.defaultSelectedIndex !== undefined) {
-      var defaultSelectedValue = this.props.group[this.props.defaultSelectedIndex].value
+    if (this.props.defaultSelectedIndexes !== undefined) {
       if (this.props.multiple) {
-        this.state.multipleSelectedData.push(defaultSelectedValue)
+        this.props.defaultSelectedIndexes.map((item) => {
+          var defaultSelectedValue = this.props.group[item].value
+          this.state.multipleSelectedData.push(defaultSelectedValue)
+        })
         this.setState({
           multipleSelectedData: this.state.multipleSelectedData
         })
       } else {
+        var idx = this.props.defaultSelectedIndexes[0]
         this.setState({
-          radioSelectedData: defaultSelectedValue
+          radioSelectedData: this.props.group[idx].value
         })
       }
     }
