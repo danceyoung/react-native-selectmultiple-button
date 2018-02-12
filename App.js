@@ -4,7 +4,7 @@
  * @flow 
  * @Date: 2018-02-08 17:53:17 
  * @Last Modified by: Young
- * @Last Modified time: 2018-02-12 10:57:59
+ * @Last Modified time: 2018-02-12 11:32:29
  */
 
 import React, { Component } from 'react'
@@ -162,7 +162,7 @@ export default class App extends Component {
           I like {_.join(this.state.multipleSelectedData_group, ', ')}
         </Text>
         <SelectMultipleGroupButton
-          defaultSelectedIndexes={[0,2,4]}
+          defaultSelectedIndexes={defaultSelectedIndex_group_insterest}
           containerViewStyle={{
             justifyContent: 'flex-start'
           }}
@@ -186,7 +186,7 @@ export default class App extends Component {
         </Text>
         <SelectMultipleGroupButton
           multiple={false}
-          defaultSelectedIndexes={[1]}
+          defaultSelectedIndexes={defaultSelectedIndex_group_gender}
           containerViewStyle={{
             flexDirection: 'column',
             width: 100
