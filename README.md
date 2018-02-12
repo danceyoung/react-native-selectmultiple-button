@@ -57,7 +57,7 @@ code snap
         backgroundTintColor: ios_blue,
         textTintColor: 'white',
       }}
-      selectMultiple={true}
+      multiple={true}
       value={interest}
       selected={this.state.multipleSelectedData.includes(interest)}
       singleTap={(valueTap) => this._singleTapMultipleSelectedButtons(interest)} />
