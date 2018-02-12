@@ -4,7 +4,7 @@
  * @flow 
  * @Date: 2018-02-08 17:53:17 
  * @Last Modified by: Young
- * @Last Modified time: 2018-02-11 16:13:34
+ * @Last Modified time: 2018-02-12 10:40:48
  */
 
 import React, { Component } from 'react'
@@ -28,6 +28,9 @@ const radioData = ['Female', 'Male', 'Other', 'Rather not say']
 const multipleGroupData = [{ value: 'running' }, { value: 'riding' }, { value: 'reading' }, { value: 'coding' }, { value: 'Niuer' }]
 const radioGroupData = [{ value: 'Female', displayValue: 'F' }, { value: 'Male', displayValue: 'M' }, { value: 'Other', displayValue: 'O' }, { value: 'Rather not say', displayValue: 'R' }]
 
+const defaultSelectedIndex_group_insterest = 4
+const defaultSelectedIndex_group_gender = 1
+
 export default class App extends Component {
 
   constructor(props) {
@@ -36,8 +39,8 @@ export default class App extends Component {
       multipleSelectedData: [],
       radioSelectedData: '',
 
-      multipleSelectedData_group: [],
-      radioSelectedData_group: '',
+      multipleSelectedData_group: [multipleGroupData[defaultSelectedIndex_group_insterest].value],
+      radioSelectedData_group: radioGroupData[defaultSelectedIndex_group_gender].value,
     }
   }
 
@@ -111,7 +114,7 @@ export default class App extends Component {
                   backgroundTintColor: ios_blue,
                   textTintColor: 'white',
                 }}
-                selectMultiple={true}
+                multiple={true}
                 value={interest}
                 selected={this.state.multipleSelectedData.includes(interest)}
                 singleTap={(valueTap) => this._singleTapMultipleSelectedButtons(interest)} />
@@ -132,7 +135,7 @@ export default class App extends Component {
             radioData.map((gender) =>
               <SelectMultipleButton
                 key={gender}
-                selectMultiple={false}
+                multiple={false}
                 value={gender}
                 displayValue={gender + '.'}
                 selected={this.state.radioSelectedData === gender}
@@ -153,6 +156,7 @@ export default class App extends Component {
           I like {_.join(this.state.multipleSelectedData_group, ', ')}
         </Text>
         <SelectMultipleGroupButton
+          defaultSelectedIndex={defaultSelectedIndex_group_insterest}
           containerViewStyle={{
             justifyContent: 'flex-start'
           }}
@@ -175,7 +179,8 @@ export default class App extends Component {
           I am {this.state.radioSelectedData_group}
         </Text>
         <SelectMultipleGroupButton
-          selectMultiple={false}
+          multiple={false}
+          defaultSelectedIndex={defaultSelectedIndex_group_gender}
           containerViewStyle={{
             flexDirection: 'column',
             width: 100
