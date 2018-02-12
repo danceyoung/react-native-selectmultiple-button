@@ -197,4 +197,4 @@ Default View Style and Layout props is
       }
 ## License
 
-react-native-selectmultiple-button is [MIT LICENSE](https://github.com/danceyoung/react-native-selectmultiple-button/blob/master/LICENSE).
+react-native-selectmultiple-button is [MIT Licensed](https://github.com/danceyoung/react-native-selectmultiple-button/blob/master/LICENSE).
