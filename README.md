@@ -83,7 +83,7 @@ code snap
 ### SelectMultipleButton
 |props  |type  |required  |desc  |
 |--|--|--|--|
-|`multiple`  |bool  |no  |Default is true. The `selectMultiple` prop determines whether the button is multiple or radio selected  |
+|`multiple`  |bool  |no  |Default is true. The `multiple` prop determines whether the button is multiple or radio selected  |
 |`selected`  |bool  |no  |Default is false. The `selected` prop determines whether the button is selected and highlighted  |
 |`value`  |one of types(string,number)  |yes  |Your business key   |
 |`displayValue`  |one of types(string,number)  |no  |Default is == `value` prop if not set `displayValue` prop. Displayed as button's text |
@@ -152,7 +152,7 @@ Default style is
 ### SelectMultipleGroupButton
 |props  |type  |required  |desc  |
 |--|--|--|--|
-|`multiple`  |bool  |no  |Default is true. The `selectMultiple` prop determines the grouped buttons are multiple or radio selected  |
+|`multiple`  |bool  |no  |Default is true. The `multiple` prop determines the grouped buttons are multiple or radio selected  |
 |`defaultSelectedIndexes`  |array  |no  |The indexes array of `group` of the grouped buttons to be default selected and highlighted |
 |`group`  |array of {value,displayValue}  |yes  |Just a plain array, `value` and `displayValue` props are akin to `value` and `displayValue` props of `SelectMultipleButton`.  |
 |`singleTap`  |function(valueTap)  |no  |Handler to be called when the user taps the button. The button's props `value` is passed as an argument to the callback hanlder.   |
