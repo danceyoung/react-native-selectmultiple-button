@@ -61,10 +61,10 @@ __tests__/App.js
 .gitattributes
 
 # npmignore
-#android/
-#ios/
-#index.ios.js
-#app.json
-#App.js
-#screenCapture/
+android/
+ios/
+index.ios.js
+app.json
+App.js
+screenCapture/
 
