@@ -4,7 +4,7 @@
  * @flow 
  * @Date: 2018-02-08 17:53:17 
  * @Last Modified by: Young
- * @Last Modified time: 2018-02-12 15:19:02
+ * @Last Modified time: 2018-04-08 12:15:50
  */
 
 import React, { Component } from 'react'
@@ -14,217 +14,110 @@ import {
   Text,
   View,
   Alert,
-  ScrollView
+  ScrollView,
+  Dimensions
 } from 'react-native';
-import _ from 'lodash'
-import { SelectMultipleButton, SelectMultipleGroupButton } from './index.js'
 
-const themeColor = '#0D1014'
+const SCREEN_WIDTH = Dimensions.get('window').width
 const ios_blue = '#007AFF'
-const textColor = '#D3D3D3'
-const multipleData = ['running', 'riding', 'reading', 'coding', 'Niuer']
-const radioData = ['Female', 'Male', 'Other', 'Rather not say']
+const themeColor = '#0D1014'
 
-const multipleGroupData = [{ value: 'running' }, { value: 'riding' }, { value: 'reading' }, { value: 'coding' }, { value: 'Niuer' }]
-const radioGroupData = [{ value: 'Female', displayValue: 'F' }, { value: 'Male', displayValue: 'M' }, { value: 'Other', displayValue: 'O' }, { value: 'Rather not say', displayValue: 'R' }]
-
-const defaultSelectedIndex_group_insterest = [0,1,4]
-const defaultSelectedIndex_group_gender = [1]
+import { SelectMultipleGroupButton } from './index.js'
+import SimpleButton from './sample/SimpleButton'
+import GroupButton from './sample/GroupButton'
+import SegmentedControl from './sample/SegmentedControl'
+import ListButton from './sample/ListButton'
 
 export default class App extends Component {
 
   constructor(props) {
     super(props)
 
-    var selectedValues1=[]
-    defaultSelectedIndex_group_insterest.map((item)=>{
-      selectedValues1.push(multipleGroupData[item].value)
-    })
-
     this.state = {
-      multipleSelectedData: [],
-      radioSelectedData: '',
-
-      multipleSelectedData_group: selectedValues1,
-      radioSelectedData_group: radioGroupData[defaultSelectedIndex_group_gender[0]].value,
+      usageScrollView: null,
     }
-  }
-
-  _singleTapMultipleSelectedButtons(interest) {
-    if (this.state.multipleSelectedData.includes(interest)) {
-      _.remove(this.state.multipleSelectedData, (ele) => { return ele === interest })
-    } else {
-      this.state.multipleSelectedData.push(interest)
-    }
-
-    this.setState(
-      {
-        multipleSelectedData: this.state.multipleSelectedData
-      }
-    )
-  }
-
-  _singleTapRadioSelectedButtons(valueTap, gender) {
-    // Alert.alert('', valueTap)
-    this.setState({
-      radioSelectedData: gender
-    })
-  }
-
-  _groupButtonOnSelectedValuesChange(selectedValues) {
-    this.setState(
-      {
-        multipleSelectedData_group: selectedValues
-      }
-    )
-  }
-
-  _onRadioGroupButtonSingleTap(valueTap) {
-    this.setState(
-      {
-        radioSelectedData_group: valueTap
-      }
-    )
   }
 
   render() {
     return (
-      <ScrollView style={styles.container}>
-        <View style={{ justifyContent: 'center', height: 40, backgroundColor: '#15191F', marginTop: 20 }} >
-          <Text style={{ fontSize: 18, color: 'white', }}>SelectMultipleButton</Text>
+      <View
+        style={{ flex: 1, backgroundColor: '#15191F', }}>
+        <View style={{ marginTop: 20 }}>
+          <SelectMultipleGroupButton
+            multiple={false}
+            group={[
+              { value: 'SimpleBtn' },
+              { value: 'GroupBtn' },
+              { value: 'Segment' },
+              { value: 'List' }]}
+            defaultSelectedIndexes={[0]}
+            singleTap={(valueTap) => {
+              switch (valueTap) {
+                case 'SimpleBtn':
+                  this.state.usageScrollView.scrollTo({ x: 0 * SCREEN_WIDTH, y: 0, animated: true })
+                  break;
+                case 'GroupBtn':
+                  this.state.usageScrollView.scrollTo({ x: 1 * SCREEN_WIDTH, y: 0, animated: true })
+                  break;
+                case 'Segment':
+                  this.state.usageScrollView.scrollTo({ x: 2 * SCREEN_WIDTH, y: 0, animated: true })
+                  break;
+                case 'List':
+                  this.state.usageScrollView.scrollTo({ x: 3 * SCREEN_WIDTH, y: 0, animated: true })
+                  break;
+                default:
+                  break;
+              }
+            }}
+            buttonViewStyle={{ flex: 1, margin: 0, borderRadius: 0 }}
+            highLightStyle={{
+              borderColor: ios_blue, textColor: ios_blue, backgroundColor: themeColor,
+              borderTintColor: ios_blue, textTintColor: 'white', backgroundTintColor: ios_blue
+            }}
+          />
+          <ScrollView
+            ref={(ref) => this.state.usageScrollView = ref}
+            pagingEnabled={true}
+            scrollEnabled={false}
+            horizontal={true}>
+            <View style={styles.horizontalView}>
+              <Text style={styles.usageTitle}>
+                Simple Button Usage
+              </Text>
+              <SimpleButton />
+            </View>
+            <View style={styles.horizontalView}>
+              <Text style={styles.usageTitle}>
+                Group Button Usage
+              </Text>
+              <GroupButton />
+            </View>
+            <View style={styles.horizontalView}>
+              <Text style={[styles.usageTitle, { marginBottom: 20 }]}>
+                SegmentedControl Usage
+              </Text>
+              <SegmentedControl />
+            </View>
+            <View style={styles.horizontalView}>
+              <Text style={styles.usageTitle}>
+                List Usage
+              </Text>
+              <ListButton />
+            </View>
+          </ScrollView>
         </View>
-        <Text style={styles.welcome}>
-          implement the multiple-select buttons demo by SelectMultipleButton
-        </Text>
-        <Text style={{ color: ios_blue, marginLeft: 10 }}>
-          I like {_.join(this.state.multipleSelectedData, ', ')}
-        </Text>
-        <View
-          style={{ flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'center' }}>
-          {
-            multipleData.map((interest) =>
-              <SelectMultipleButton
-                key={interest}
-                buttonViewStyle={{
-                  borderRadius: 10,
-                  height: 40
-                }}
-                textStyle={{
-                  fontSize: 15,
-                }}
-                highLightStyle={{
-                  borderColor: 'gray',
-                  backgroundColor: 'transparent',
-                  textColor: 'gray',
-                  borderTintColor: ios_blue,
-                  backgroundTintColor: ios_blue,
-                  textTintColor: 'white',
-                }}
-                multiple={true}
-                value={interest}
-                selected={this.state.multipleSelectedData.includes(interest)}
-                singleTap={(valueTap) => this._singleTapMultipleSelectedButtons(interest)} />
-            )
-          }
-        </View>
-        <View style={{ height: 1, backgroundColor: 'gray', marginTop: 20 }} />
-
-        <Text style={styles.welcome}>
-          implement the radio-select buttons demo by SelectMultipleButton
-        </Text>
-        <Text style={{ color: ios_blue, marginLeft: 10 }}>
-          I am {this.state.radioSelectedData}
-        </Text>
-        <View
-          style={{ flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'center' }}>
-          {
-            radioData.map((gender) =>
-              <SelectMultipleButton
-                key={gender}
-                multiple={false}
-                value={gender}
-                displayValue={gender + '.'}
-                selected={this.state.radioSelectedData === gender}
-                singleTap={(valueTap) => this._singleTapRadioSelectedButtons(valueTap, gender)} />
-            )
-          }
-        </View>
-        <View style={{ height: 1, backgroundColor: 'gray', marginTop: 20 }} />
-        <View style={{ justifyContent: 'center', height: 40, backgroundColor: '#15191F', marginTop: 20 }} >
-          <Text style={{ color: 'white', fontSize: 18 }}>
-            SelectMultipleGroupButton</Text>
-        </View>
-
-        <Text style={styles.welcome}>
-          implement the multiple-select buttons demo by SelectMultipleGroupButton
-        </Text>
-        <Text style={{ color: ios_blue, marginLeft: 10 }}>
-          I like {_.join(this.state.multipleSelectedData_group, ', ')}
-        </Text>
-        <SelectMultipleGroupButton
-          defaultSelectedIndexes={defaultSelectedIndex_group_insterest}
-          containerViewStyle={{
-            justifyContent: 'flex-start'
-          }}
-          highLightStyle={{
-            borderColor: 'gray',
-            backgroundColor: 'transparent',
-            textColor: 'gray',
-            borderTintColor: ios_blue,
-            backgroundTintColor: 'transparent',
-            textTintColor: ios_blue,
-          }}
-          onSelectedValuesChange={(selectedValues) => this._groupButtonOnSelectedValuesChange(selectedValues)}
-          group={multipleGroupData} />
-        <View style={{ height: 1, backgroundColor: 'gray', marginTop: 20 }} />
-
-        <Text style={styles.welcome}>
-          implement the radio-select buttons demo by SelectMultipleGroupButton
-        </Text>
-        <Text style={{ color: 'green', marginLeft: 10 }}>
-          I am {this.state.radioSelectedData_group}
-        </Text>
-        <SelectMultipleGroupButton
-          multiple={false}
-          defaultSelectedIndexes={defaultSelectedIndex_group_gender}
-          containerViewStyle={{
-            flexDirection: 'column',
-            width: 100
-          }}
-          highLightStyle={{
-            borderColor: 'gray',
-            backgroundColor: 'transparent',
-            textColor: 'gray',
-            borderTintColor: 'green',
-            backgroundTintColor: 'green',
-            textTintColor: 'white',
-          }}
-          buttonViewStyle={{
-            width: 40,
-            height: 40,
-            borderRadius: 20
-          }}
-          singleTap={(valueTap) => { this._onRadioGroupButtonSingleTap(valueTap) }}
-          group={radioGroupData} />
-        <View style={{ height: 1, backgroundColor: 'gray', marginTop: 20 }} />
-      </ScrollView>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: themeColor,
-  },
-  welcome: {
-    margin: 10,
-    marginTop: 30,
-    color: textColor
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  usageTitle:
+    {
+      color: 'white',
+      marginTop: 20
+    },
+  horizontalView: {
+    width: SCREEN_WIDTH
   },
 });
