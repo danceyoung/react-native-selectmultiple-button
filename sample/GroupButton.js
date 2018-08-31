@@ -4,7 +4,7 @@
  * @flow 
  * @Date: 2018-04-07 11:13:31 
  * @Last Modified by: Young
- * @Last Modified time: 2018-08-31 09:56:30
+ * @Last Modified time: 2018-08-31 10:55:27
  */
 import React, { Component } from "react";
 
@@ -66,6 +66,7 @@ export default class GroupButton extends Component {
           defaultSelectedIndexes={defaultSelectedIndex_group_insterest}
           containerViewStyle={{ justifyContent: "flex-start" }}
           highLightStyle={{
+            
             borderColor: "gray",
             backgroundColor: "transparent",
             textColor: "gray",

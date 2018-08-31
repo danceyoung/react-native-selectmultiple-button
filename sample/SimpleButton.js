@@ -4,7 +4,7 @@
  * @flow 
  * @Date: 2018-04-07 10:51:10 
  * @Last Modified by: Young
- * @Last Modified time: 2018-08-30 17:07:06
+ * @Last Modified time: 2018-08-31 14:03:18
  */
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
@@ -59,7 +59,6 @@ export default class SimpleButton extends Component {
                 backgroundTintColor: ios_blue,
                 textTintColor: "white"
               }}
-              multiple={true}
               value={interest}
               selected={this.state.multipleSelectedData.includes(interest)}
               singleTap={valueTap =>
@@ -100,7 +99,6 @@ export default class SimpleButton extends Component {
                 backgroundTintColor: ios_blue,
                 textTintColor: "white"
               }}
-              multiple={true}
               value={interest}
               selected={this.state.multipleSelectedDataLimited.includes(
                 interest
@@ -130,7 +128,6 @@ export default class SimpleButton extends Component {
           {radioData.map(gender => (
             <SelectMultipleButton
               key={gender}
-              multiple={false}
               value={gender}
               displayValue={gender + "."}
               highLightStyle={{
