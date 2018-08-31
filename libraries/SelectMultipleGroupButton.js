@@ -4,41 +4,60 @@
  * @flow 
  * @Date: 2018-02-07 14:08:34 
  * @Last Modified by: Young
- * @Last Modified time: 2018-02-12 15:17:25
+ * @Last Modified time: 2018-08-31 09:31:47
  */
-import React, { Component } from 'react'
-import {
-  View,
-  Text,
-  StyleSheet
-} from 'react-native'
+import React, { Component } from "react";
+import { View, Text, StyleSheet } from "react-native";
 
-import PropTypes from 'prop-types'
-import _ from 'lodash'
-import SelectMultipleButton from './SelectMultipleButton'
+import PropTypes from "prop-types";
+import _ from "lodash";
+import SelectMultipleButton from "./SelectMultipleButton";
 
-const ios_blue = '#007AFF'
+const ios_blue = "#007AFF";
 
 export default class SelectMultipleGroupButton extends Component {
-
   static propTypes = {
     multiple: PropTypes.bool,
     defaultSelectedIndexes: PropTypes.arrayOf(PropTypes.number),
 
-    group: PropTypes.arrayOf(PropTypes.shape({
-      value: PropTypes.oneOfType(
-        [
-          PropTypes.string,
-          PropTypes.number
-        ]
-      ).isRequired,
-      displayValue: PropTypes.oneOfType(
-        [
-          PropTypes.string,
-          PropTypes.number
-        ]
-      ),
-    })).isRequired,
+    maximumNumberSelected: function(props, propName, componentName) {
+      let value = props[propName];
+      if (value === undefined) {
+        return null;
+      }
+      // console.log(propName + " " + value + " " + typeof value);
+      if (typeof value !== "number") {
+        return new Error(
+          "Invalid prop `" +
+            propName +
+            "` supplied to `" +
+            componentName +
+            ", excepted `number`"
+        );
+      }
+      if (value < 2) {
+        return new Error(
+          "Invalid prop `" +
+            propName +
+            "` supplied to" +
+            " `" +
+            componentName +
+            "`, " +
+            propName +
+            "'s minimum value is 2."
+        );
+      }
+
+      return null;
+    },
+
+    group: PropTypes.arrayOf(
+      PropTypes.shape({
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+          .isRequired,
+        displayValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      })
+    ).isRequired,
 
     highLightStyle: PropTypes.shape({
       borderColor: PropTypes.string.isRequired,
@@ -46,47 +65,47 @@ export default class SelectMultipleGroupButton extends Component {
       textColor: PropTypes.string.isRequired,
       borderTintColor: PropTypes.string.isRequired,
       backgroundTintColor: PropTypes.string.isRequired,
-      textTintColor: PropTypes.string.isRequired,
+      textTintColor: PropTypes.string.isRequired
     }),
     containerViewStyle: PropTypes.object,
     buttonViewStyle: PropTypes.object,
     textStyle: PropTypes.object,
 
     singleTap: PropTypes.func,
-    onSelectedValuesChange: PropTypes.func,
-  }
+    onSelectedValuesChange: PropTypes.func
+  };
 
   static defaultProps = {
     multiple: true,
-    singleTap: (valueTap) => { },
-    onSelectedValuesChange: (selectedValues) => { }
-  }
+    singleTap: valueTap => {},
+    onSelectedValuesChange: selectedValues => {}
+  };
 
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       multipleSelectedData: [],
-      radioSelectedData: ''
-    }
+      radioSelectedData: ""
+    };
   }
 
   componentDidMount() {
     if (this.props.defaultSelectedIndexes !== undefined) {
       if (this.props.multiple) {
-        this.props.defaultSelectedIndexes.map((item) => {
-          var defaultSelectedValue = this.props.group[item].value
-          this.state.multipleSelectedData.push(defaultSelectedValue)
-        })
+        this.props.defaultSelectedIndexes.map(item => {
+          var defaultSelectedValue = this.props.group[item].value;
+          this.state.multipleSelectedData.push(defaultSelectedValue);
+        });
         this.setState({
           multipleSelectedData: this.state.multipleSelectedData
-        })
+        });
       } else {
-        var idx = this.props.defaultSelectedIndexes[0]
+        var idx = this.props.defaultSelectedIndexes[0];
         if (idx !== undefined) {
           this.setState({
             radioSelectedData: this.props.group[idx].value
-          })
+          });
         }
       }
     }
@@ -95,72 +114,72 @@ export default class SelectMultipleGroupButton extends Component {
   _singleTapMultipleSelectedButtons(valueTap) {
     if (this.props.multiple) {
       if (this.state.multipleSelectedData.includes(valueTap)) {
-        _.remove(this.state.multipleSelectedData, (item) => { return item === valueTap })
+        _.remove(this.state.multipleSelectedData, item => {
+          return item === valueTap;
+        });
       } else {
-        this.state.multipleSelectedData.push(valueTap)
+        if (this.props.maximumNumberSelected !== undefined) {
+          if (
+            this.state.multipleSelectedData.length <
+            this.props.maximumNumberSelected
+          ) {
+            this.state.multipleSelectedData.push(valueTap);
+          }
+        }else{
+          this.state.multipleSelectedData.push(valueTap);
+        }
       }
 
-      this.props.onSelectedValuesChange(this.state.multipleSelectedData)
+      this.props.onSelectedValuesChange(this.state.multipleSelectedData);
 
-      this.setState(
-        {
-          multipleSelectedData: this.state.multipleSelectedData
-        }
-      )
+      this.setState({
+        multipleSelectedData: this.state.multipleSelectedData
+      });
     } else {
-      this.props.onSelectedValuesChange([valueTap])
-      this.setState(
-        {
-          radioSelectedData: valueTap
-        }
-      )
+      this.props.onSelectedValuesChange([valueTap]);
+      this.setState({
+        radioSelectedData: valueTap
+      });
     }
 
-    this.props.singleTap(valueTap)
-
+    this.props.singleTap(valueTap);
   }
 
   _selectedStatus(value) {
     if (this.props.multiple) {
-      return this.state.multipleSelectedData.includes(value)
+      return this.state.multipleSelectedData.includes(value);
     } else {
-      return this.state.radioSelectedData === value
+      return this.state.radioSelectedData === value;
     }
   }
 
   render() {
     return (
-      <View
-        style={
-          [
-            styles.containerView,
-            this.props.containerViewStyle
-          ]
-        }>
-        {
-          this.props.group.map((ele, index) =>
-            <SelectMultipleButton
-              key={ele.value + index}
-              buttonViewStyle={this.props.buttonViewStyle}
-              textStyle={this.props.textStyle}
-              highLightStyle={this.props.highLightStyle}
-              multiple={this.props.multiple}
-              value={ele.value}
-              displayValue={ele.displayValue}
-              selected={this._selectedStatus(ele.value)}
-              singleTap={(valueTap) => this._singleTapMultipleSelectedButtons(valueTap)} />
-          )
-        }
+      <View style={[styles.containerView, this.props.containerViewStyle]}>
+        {this.props.group.map((ele, index) => (
+          <SelectMultipleButton
+            key={ele.value + index}
+            buttonViewStyle={this.props.buttonViewStyle}
+            textStyle={this.props.textStyle}
+            highLightStyle={this.props.highLightStyle}
+            multiple={this.props.multiple}
+            value={ele.value}
+            displayValue={ele.displayValue}
+            selected={this._selectedStatus(ele.value)}
+            singleTap={valueTap =>
+              this._singleTapMultipleSelectedButtons(valueTap)
+            }
+          />
+        ))}
       </View>
-    )
+    );
   }
 }
 
 const styles = StyleSheet.create({
   containerView: {
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    justifyContent: 'center'
+    flexWrap: "wrap",
+    flexDirection: "row",
+    justifyContent: "center"
   }
-})
-
+});
