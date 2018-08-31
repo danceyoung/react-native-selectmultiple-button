@@ -157,7 +157,6 @@ group={multipleGroupData} />
 
 |props  |type  |required  |desc  |
 |--|--|--|--|
-|`multiple` |bool |no |Default is true. The `multiple` prop determines whether the button is multiple or radio selected |
 |`selected` |bool |no |Default is false. The `selected` prop determines whether the button is selected and highlighted |
 |`value` |one of types(string,number) |yes |Your business key |
 |`displayValue` |one of types(string,number) |no |Default is == `value` prop if not set `displayValue` prop. Displayed as button's text |
