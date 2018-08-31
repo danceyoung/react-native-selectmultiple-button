@@ -4,7 +4,7 @@
  * @flow 
  * @Date: 2018-02-06 13:54:25 
  * @Last Modified by: Young
- * @Last Modified time: 2018-08-30 15:06:49
+ * @Last Modified time: 2018-08-31 14:03:36
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -21,8 +21,6 @@ const ios_blue = '#007AFF'
 export default class SelectMultipleButton extends Component {
 
   static propTypes = {
-    multiple: PropTypes.bool,
-
     selected: PropTypes.bool,
 
     value: PropTypes.oneOfType(
@@ -55,7 +53,6 @@ export default class SelectMultipleButton extends Component {
 
   static defaultProps = {
     selected: false,
-    multiple: true,
     highLightStyle: {
       borderColor: 'gray',
       backgroundColor: 'transparent',
