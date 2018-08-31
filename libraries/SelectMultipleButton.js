@@ -4,7 +4,7 @@
  * @flow 
  * @Date: 2018-02-06 13:54:25 
  * @Last Modified by: Young
- * @Last Modified time: 2018-02-12 10:06:05
+ * @Last Modified time: 2018-08-30 15:06:49
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -93,18 +93,10 @@ export default class SelectMultipleButton extends Component {
     return (
       <TouchableWithoutFeedback
         onPress={() => {
-          if (this.props.multiple) {
-            this.setState({ selected: !this.state.selected })
-            this.props.singleTap(this.props.value)
-          } else {
-            if (!this.state.selected) {
-              this.setState({ selected: !this.state.selected })
-              this.props.singleTap(this.props.value)
-            }
-          }
-
+          this.props.singleTap(this.props.value)
         }
         }>
+
         <View
           style={
             [
@@ -126,7 +118,7 @@ export default class SelectMultipleButton extends Component {
             {this.props.displayValue === undefined ? this.props.value : this.props.displayValue}
           </Text>
         </View>
-      </TouchableWithoutFeedback >
+      </TouchableWithoutFeedback>
     )
   }
 }
