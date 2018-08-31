@@ -61,11 +61,13 @@ __tests__/App.js
 .gitattributes
 
 # npmignore
-android/
-ios/
-index.ios.js
-app.json
-App.js
-screenCapture/
-sample/
+# android/
+# ios/
+# index.ios.js
+# app.json
+#App.js
+# screenCapture/
+# sample/
 
+
+.vscode/launch.json
