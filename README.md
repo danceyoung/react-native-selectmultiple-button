@@ -1,6 +1,6 @@
 # React Native SelectMultiple Button
 
-This library is a button (or a grouped buttons) supporting multiple or radio selection by building with React Native
+This library is a button (or a grouped buttons) supporting multiple or radio selection by building with React Native. https://github.com/danceyoung/selectmultiplebuttons for Swift.
 
 You can specify any **Layout** and **Style** for container view,button view and text through `View Style Props`, `Layout Props` and `Text Style Props` supporting by React Native
 
