@@ -78,12 +78,13 @@ export default class SelectMultipleButton extends Component {
     })
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.selected !== nextProps.selected) {
-      this.setState({
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (prevState.selected !== nextProps.selected) {
+      return {
         selected: nextProps.selected
-      })
+      }
     }
+    return null;
   }
 
   render() {
